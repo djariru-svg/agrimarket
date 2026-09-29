@@ -1,0 +1,28 @@
+# ============================================================
+# AgriMarket RW — robots.txt
+# ============================================================
+
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /products.html
+Allow: /about.html
+Allow: /404.html
+
+# Private pages — ntibigomba kugaragara kuri Google
+Disallow: /api/
+Disallow: /data/
+Disallow: /js/
+Disallow: /css/
+Disallow: /admin.html
+Disallow: /dashboard.html
+Disallow: /add-product.html
+Disallow: /orders.html
+Disallow: /farmer-orders.html
+Disallow: /profile.html
+
+# Sitemap
+Sitemap: https://agrimarket.rw/sitemap.xml
+
+# Crawl delay (ntibiremereye server)
+Crawl-delay: 1

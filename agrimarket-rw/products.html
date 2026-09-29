@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Ibicuruzwa — Gura Imboga, Imyaka, Amata | AgriMarket RW</title>
+  <meta name="description" content="Reba ibicuruzwa byose biva ku bahinzi b'u Rwanda. Imboga, ibinyampeke, imyumbati, imyaka, amata n'ibindi ku giciro cyiza.">
+  <meta name="keywords" content="ibicuruzwa, imboga, imyaka, amata, gura online, abahinzi, Rwanda">
+  <meta name="author" content="AgriMarket RW">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://agrimarket.rw/products.html">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://agrimarket.rw/products.html">
+  <meta property="og:title" content="Ibicuruzwa — AgriMarket RW">
+  <meta property="og:description" content="Reba ibicuruzwa byose biva ku bahinzi b'u Rwanda.">
+  <meta property="og:image" content="https://agrimarket.rw/images/og-products.jpg">
+  <meta property="og:locale" content="rw_RW">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ibicuruzwa — AgriMarket RW">
+  <meta name="twitter:description" content="Reba ibicuruzwa byose biva ku bahinzi b'u Rwanda.">
+  
+  <meta name="theme-color" content="#2e7d32">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/seo.css">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Ibicuruzwa",
+    "url": "https://agrimarket.rw/products.html",
+    "description": "Urutonde rw'ibicuruzwa biva ku bahinzi b'u Rwanda"
+  }
+  </script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-seedling"></i> AgriMarket <span>RW</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Ahabanza</a>
+        <a href="products.html" class="active">Ibicuruzwa</a>
+        <a href="about.html">Abo turibo</a>
+        <a href="#" id="cartBtn"><i class="fas fa-shopping-cart"></i> <span id="cartCount">0</span></a>
+        <a href="#" id="authBtn" class="btn-nav">Injira</a>
+      </div>
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Ibicuruzwa Byose</h1>
+      <p>Shakisha umusaruro uva ku bahinzi b'u Rwanda</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="filters">
+      <input type="text" id="searchInput" placeholder="🔍 Shakisha ibicuruzwa, umuhinzi, ahantu...">
+      <select id="filterCategory">
+        <option value="all">Ibyiciro byose</option>
+        <option value="Imboga">Imboga</option>
+        <option value="Ibinyampeke">Ibinyampeke</option>
+        <option value="Imyumbati">Imyumbati</option>
+        <option value="Imyaka">Imyaka</option>
+        <option value="Amata">Amata</option>
+        <option value="Ibindi">Ibindi</option>
+      </select>
+      <select id="filterDistrict">
+        <option value="all">Uturere twose</option>
+        <option value="Kigali">Kigali</option>
+        <option value="Northern">Amajyaruguru</option>
+        <option value="Southern">Amajyepfo</option>
+        <option value="Eastern">Iburasirazuba</option>
+        <option value="Western">Iburengerazuba</option>
+      </select>
+      <select id="filterSort">
+        <option value="newest">Bishya</option>
+        <option value="price-low">Igiciro: Gito → Kinini</option>
+        <option value="price-high">Igiciro: Kinini → Gito</option>
+      </select>
+    </div>
+
+    <div class="products-grid" id="allProducts" style="padding-bottom: 60px;">
+      <!-- Products loaded by JS -->
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 AgriMarket RW. Uburenganzira bwose burabitswe. | Project ya Level 4 Software Development</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Auth Modal -->
+  <div class="modal" id="authModal">
+    <div class="modal-content">
+      <span class="close-modal" id="closeAuth">&times;</span>
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-tab="login">Injira</button>
+        <button class="auth-tab" data-tab="register">Iyandikishe</button>
+      </div>
+      <form id="loginForm" class="auth-form">
+        <h3>Injira muri konti yawe</h3>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="loginEmail" required placeholder="email@example.com">
+        </div>
+        <div class="form-group">
+          <label>Ijambo ry'ibanga</label>
+          <input type="password" id="loginPassword" required placeholder="********">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Injira</button>
+      </form>
+      <form id="registerForm" class="auth-form" style="display:none;">
+        <h3>Kora konti nshya</h3>
+        <div class="form-group">
+          <label>Amazina</label>
+          <input type="text" id="regName" required placeholder="Amazina yawe">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="regEmail" required placeholder="email@example.com">
+        </div>
+        <div class="form-group">
+          <label>Telefoni</label>
+          <input type="tel" id="regPhone" required placeholder="07X XXX XXXX">
+        </div>
+        <div class="form-group">
+          <label>Akarere</label>
+          <select id="regDistrict" required>
+            <option value="">Hitamo akarere</option>
+            <option value="Kigali">Kigali</option>
+            <option value="Northern">Amajyaruguru</option>
+            <option value="Southern">Amajyepfo</option>
+            <option value="Eastern">Iburasirazuba</option>
+            <option value="Western">Iburengerazuba</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Ubwoko bwa konti</label>
+          <select id="regRole" required>
+            <option value="buyer">Umuguzi</option>
+            <option value="farmer">Umuhinzi</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Ijambo ry'ibanga</label>
+          <input type="password" id="regPassword" required placeholder="********">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Iyandikishe</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Cart Modal -->
+  <div class="modal" id="cartModal">
+    <div class="modal-content cart-modal">
+      <span class="close-modal" id="closeCart">&times;</span>
+      <h2><i class="fas fa-shopping-cart"></i> Agasanduku kawe</h2>
+      <div id="cartItems"></div>
+      <div class="cart-total">
+        <h3>Igiciro cyose: <span id="cartTotal">0</span></h3>
+        <button class="btn btn-primary btn-block" id="checkoutBtn">Saba Order</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

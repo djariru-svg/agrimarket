@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - AgriMarket RW</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-seedling"></i> AgriMarket <span>RW</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Ahabanza</a>
+        <a href="products.html">Ibicuruzwa</a>
+        <a href="admin.html" class="active">Admin</a>
+        <a href="#" id="authBtn" class="btn-nav">Injira</a>
+      </div>
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1><i class="fas fa-shield-alt"></i> Ubuyobozi</h1>
+      <p>Murakaza neza, <span id="adminName">Admin</span> — Gucunga AgriMarket RW</p>
+    </div>
+  </section>
+
+  <section class="dashboard" style="padding-top:20px;">
+    <div class="container">
+
+      <!-- Admin Tabs -->
+      <div class="admin-tabs">
+        <button class="admin-tab active" data-tab="overview">
+          <i class="fas fa-chart-line"></i> Incamake
+        </button>
+        <button class="admin-tab" data-tab="users">
+          <i class="fas fa-users"></i> Abakoresha
+        </button>
+        <button class="admin-tab" data-tab="products">
+          <i class="fas fa-box"></i> Ibicuruzwa
+        </button>
+        <button class="admin-tab" data-tab="orders">
+          <i class="fas fa-shopping-bag"></i> Orders
+        </button>
+        <button class="admin-tab" data-tab="analytics">
+          <i class="fas fa-chart-pie"></i> Isesengura
+        </button>
+      </div>
+
+      <!-- ============ OVERVIEW PANEL ============ -->
+      <div class="admin-panel active" id="panel-overview">
+        <h2 style="margin-bottom:24px;color:var(--primary-dark);">
+          <i class="fas fa-chart-line"></i> Incamake rusange
+        </h2>
+        <div class="dashboard-stats" style="margin-bottom:32px;">
+          <div class="stat-card">
+            <div class="stat-icon blue"><i class="fas fa-users"></i></div>
+            <div class="stat-info">
+              <h3 id="ovUsers">0</h3>
+              <p>Abakoresha bose</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon green"><i class="fas fa-tractor"></i></div>
+            <div class="stat-info">
+              <h3 id="ovFarmers">0</h3>
+              <p>Abahinzi</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon orange"><i class="fas fa-shopping-cart"></i></div>
+            <div class="stat-info">
+              <h3 id="ovBuyers">0</h3>
+              <p>Abaguzi</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon green"><i class="fas fa-box"></i></div>
+            <div class="stat-info">
+              <h3 id="ovProducts">0</h3>
+              <p>Ibicuruzwa</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon blue"><i class="fas fa-shopping-bag"></i></div>
+            <div class="stat-info">
+              <h3 id="ovOrders">0</h3>
+              <p>Orders zose</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon orange"><i class="fas fa-hourglass-half"></i></div>
+            <div class="stat-info">
+              <h3 id="ovPending">0</h3>
+              <p>Zitegereje</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon red"><i class="fas fa-money-bill-wave"></i></div>
+            <div class="stat-info">
+              <h3 id="ovRevenue">0 RWF</h3>
+              <p>Amafaranga yose</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ USERS PANEL ============ -->
+      <div class="admin-panel" id="panel-users">
+        <h2 style="margin-bottom:24px;color:var(--primary-dark);">
+          <i class="fas fa-users"></i> Abakoresha bose
+        </h2>
+        <div class="filters" style="grid-template-columns:2fr 1fr;">
+          <input type="text" id="userSearch" placeholder="🔍 Shakisha izina, email cyangwa telefoni...">
+          <select id="userRoleFilter">
+            <option value="all">Abakoresha bose</option>
+            <option value="farmer">Abahinzi</option>
+            <option value="buyer">Abaguzi</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+        <div class="dashboard-table" style="margin-top:20px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Amazina</th>
+                <th>Email</th>
+                <th>Telefoni</th>
+                <th>Akarere</th>
+                <th>Uruhare</th>
+                <th>Status</th>
+                <th>Ibikorwa</th>
+              </tr>
+            </thead>
+            <tbody id="usersTableBody">
+              <tr><td colspan="7" style="text-align:center;padding:20px;">Turashakisha...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ============ PRODUCTS PANEL ============ -->
+      <div class="admin-panel" id="panel-products">
+        <h2 style="margin-bottom:24px;color:var(--primary-dark);">
+          <i class="fas fa-box"></i> Ibicuruzwa byose
+        </h2>
+        <div class="filters" style="grid-template-columns:1fr 1fr;">
+          <select id="prodStatusFilter">
+            <option value="all">Status zose</option>
+            <option value="active">Active</option>
+            <option value="sold_out">Byashize</option>
+            <option value="suspended">Byahagaritswe</option>
+          </select>
+          <select id="prodCatFilter">
+            <option value="all">Ibyiciro byose</option>
+            <option value="Imboga">Imboga</option>
+            <option value="Ibinyampeke">Ibinyampeke</option>
+            <option value="Imyumbati">Imyumbati</option>
+            <option value="Imyaka">Imyaka</option>
+            <option value="Amata">Amata</option>
+            <option value="Ibindi">Ibindi</option>
+          </select>
+        </div>
+        <div class="dashboard-table" style="margin-top:20px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Igicuruzwa</th>
+                <th>Icyiciro</th>
+                <th>Umuhinzi</th>
+                <th>Igiciro</th>
+                <th>Ingano</th>
+                <th>Status</th>
+                <th>Ibikorwa</th>
+              </tr>
+            </thead>
+            <tbody id="adminProductsBody">
+              <tr><td colspan="7" style="text-align:center;padding:20px;">Turashakisha...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ============ ORDERS PANEL ============ -->
+      <div class="admin-panel" id="panel-orders">
+        <h2 style="margin-bottom:24px;color:var(--primary-dark);">
+          <i class="fas fa-shopping-bag"></i> Orders zose
+        </h2>
+        <div class="filters" style="grid-template-columns:1fr;">
+          <select id="orderStatusFilter">
+            <option value="all">Status zose</option>
+            <option value="pending">Itegereje</option>
+            <option value="confirmed">Yemejwe</option>
+            <option value="delivered">Yatanzwe</option>
+            <option value="cancelled">Yahagaritswe</option>
+          </select>
+        </div>
+        <div id="adminOrdersList" style="margin-top:20px;">
+          <div class="loading"><i class="fas fa-spinner"></i><p>Turashakisha...</p></div>
+        </div>
+      </div>
+
+      <!-- ============ ANALYTICS PANEL ============ -->
+      <div class="admin-panel" id="panel-analytics">
+        <h2 style="margin-bottom:24px;color:var(--primary-dark);">
+          <i class="fas fa-chart-pie"></i> Isesengura
+        </h2>
+        <div class="analytics-grid">
+          <div class="analytics-card">
+            <h3><i class="fas fa-trophy"></i> Ibicuruzwa byagurishijwe cyane</h3>
+            <div id="topProductsList">
+              <div class="loading">Turashakisha...</div>
+            </div>
+          </div>
+          <div class="analytics-card">
+            <h3><i class="fas fa-map-marked-alt"></i> Amafaranga ku karere</h3>
+            <div id="districtList">
+              <div class="loading">Turashakisha...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 AgriMarket RW — Admin Panel</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

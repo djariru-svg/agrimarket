@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>PAGE_TITLE — AgriMarket RW</title>
+  <meta name="robots" content="noindex, nofollow"> <!-- ⚠️ Private pages -->
+  <meta name="description" content="PAGE_DESCRIPTION">
+  <meta name="theme-color" content="#2e7d32">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/seo.css">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-seedling"></i> AgriMarket <span>RW</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Ahabanza</a>
+        <a href="products.html">Ibicuruzwa</a>
+        <a href="profile.html" class="active">Profile</a>
+        <a href="#" id="cartBtn"><i class="fas fa-shopping-cart"></i> <span id="cartCount">0</span></a>
+        <a href="#" id="authBtn" class="btn-nav">Injira</a>
+      </div>
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1><i class="fas fa-user-circle"></i> Profile Yanjye</h1>
+      <p>Hindura amakuru yawe bwite</p>
+    </div>
+  </section>
+
+  <section class="dashboard">
+    <div class="container" style="max-width:800px;">
+
+      <!-- Profile Info -->
+      <form id="profileForm" class="add-product-form" style="max-width:100%;">
+        <h2><i class="fas fa-id-card"></i> Amakuru bwite</h2>
+
+        <div class="form-group">
+          <label>Amazina</label>
+          <input type="text" id="profName" required placeholder="Amazina yawe">
+        </div>
+
+        <div class="form-group">
+          <label>Email (ntishobora guhindurwa)</label>
+          <input type="email" id="profEmail" disabled style="background:#f5f5f5;cursor:not-allowed;">
+        </div>
+
+        <div class="form-group">
+          <label>Telefoni</label>
+          <input type="tel" id="profPhone" required placeholder="07X XXX XXXX">
+        </div>
+
+        <div class="form-group">
+          <label>Akarere</label>
+          <select id="profDistrict" required>
+            <option value="Kigali">Kigali</option>
+            <option value="Northern">Amajyaruguru</option>
+            <option value="Southern">Amajyepfo</option>
+            <option value="Eastern">Iburasirazuba</option>
+            <option value="Western">Iburengerazuba</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">
+          <i class="fas fa-save"></i> Bika Amakuru
+        </button>
+      </form>
+
+      <!-- Change Password -->
+      <form id="passwordForm" class="add-product-form" style="max-width:100%;margin-top:32px;">
+        <h2><i class="fas fa-lock"></i> Hindura ijambo ry'ibanga</h2>
+
+        <div class="form-group">
+          <label>Ijambo ry'ibanga rya kera</label>
+          <input type="password" id="pwCurrent" required placeholder="********">
+        </div>
+
+        <div class="form-group">
+          <label>Ijambo ry'ibanga rishya</label>
+          <input type="password" id="pwNew" required minlength="6" placeholder="Nibura inyuguti 6">
+        </div>
+
+        <div class="form-group">
+          <label>Emeza ijambo ry'ibanga rishya</label>
+          <input type="password" id="pwConfirm" required minlength="6" placeholder="********">
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">
+          <i class="fas fa-key"></i> Hindura Ijambo ry'Ibanga
+        </button>
+      </form>
+
+      <div style="text-align:center;margin-top:24px;">
+        <a href="index.html" class="btn btn-outline" style="border-color:var(--primary);color:var(--primary);">
+          <i class="fas fa-arrow-left"></i> Subira Ahabanza
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 AgriMarket RW</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Auth Modal -->
+  <div class="modal" id="authModal">
+    <div class="modal-content">
+      <span class="close-modal" id="closeAuth">&times;</span>
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-tab="login">Injira</button>
+        <button class="auth-tab" data-tab="register">Iyandikishe</button>
+      </div>
+      <form id="loginForm" class="auth-form">
+        <h3>Injira muri konti yawe</h3>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="loginEmail" required>
+        </div>
+        <div class="form-group">
+          <label>Ijambo ry'ibanga</label>
+          <input type="password" id="loginPassword" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Injira</button>
+      </form>
+      <form id="registerForm" class="auth-form" style="display:none;">
+        <h3>Kora konti nshya</h3>
+        <div class="form-group"><label>Amazina</label><input type="text" id="regName" required></div>
+        <div class="form-group"><label>Email</label><input type="email" id="regEmail" required></div>
+        <div class="form-group"><label>Telefoni</label><input type="tel" id="regPhone" required></div>
+        <div class="form-group">
+          <label>Akarere</label>
+          <select id="regDistrict" required>
+            <option value="">Hitamo</option>
+            <option value="Kigali">Kigali</option>
+            <option value="Northern">Amajyaruguru</option>
+            <option value="Southern">Amajyepfo</option>
+            <option value="Eastern">Iburasirazuba</option>
+            <option value="Western">Iburengerazuba</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Ubwoko</label>
+          <select id="regRole" required>
+            <option value="buyer">Umuguzi</option>
+            <option value="farmer">Umuhinzi</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Ijambo ry'ibanga</label><input type="password" id="regPassword" required></div>
+        <button type="submit" class="btn btn-primary btn-block">Iyandikishe</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Cart Modal -->
+  <div class="modal" id="cartModal">
+    <div class="modal-content cart-modal">
+      <span class="close-modal" id="closeCart">&times;</span>
+      <h2><i class="fas fa-shopping-cart"></i> Agasanduku</h2>
+      <div id="cartItems"></div>
+      <div class="cart-total">
+        <h3>Igiciro: <span id="cartTotal">0 RWF</span></h3>
+        <button class="btn btn-primary btn-block" id="checkoutBtn">Saba Order</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
