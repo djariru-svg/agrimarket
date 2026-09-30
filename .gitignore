@@ -1,0 +1,13 @@
+node_modules/
+.env
+npm-debug.log*
+.DS_Store
+*.log
+/data/*.db
+/data/*.sqlite
+*.swp
+*.swo
+.env.local
+.env.*.local
+agrimarket-rw/api/
+agrimarket-rw/data/
