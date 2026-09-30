@@ -1,16 +1,12 @@
-// ============================================================
 // AgriMarket RW — API Client
-// Handles all backend communication with PHP
-// ============================================================
-
 const API = {
-  base: 'api/',
+  base: '/api/',
 
   async request(endpoint, options = {}) {
     const url = this.base + endpoint;
     const config = {
       headers: { 'Content-Type': 'application/json' },
-      credentials: 'same-origin', // important for PHP sessions
+      credentials: 'include',
       ...options
     };
 
@@ -23,7 +19,7 @@ const API = {
       res = await fetch(url, config);
     } catch (networkErr) {
       console.error('Network error:', networkErr);
-      throw new Error('Ntabwo duhuye na server. Reba niba Apache iri gukora.');
+      throw new Error('Ntabwo duhuye na server. Reba niba server iri gukora.');
     }
 
     let data;
@@ -31,7 +27,7 @@ const API = {
       data = await res.json();
     } catch (parseErr) {
       console.error('Invalid JSON from server:', parseErr);
-      throw new Error('Server yatanze igisubizo kitarukwiye. Reba PHP error log.');
+      throw new Error('Server yatanze igisubizo kitarukwiye.');
     }
 
     if (!res.ok) {
@@ -102,7 +98,6 @@ const API = {
 
   // ============ ORDERS ============
   createOrder(items, note = '') {
-    // items must be [{ productId, qty }] — server sets price
     return this.request('orders.php?action=create', {
       method: 'POST',
       body: { items, note }

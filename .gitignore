@@ -5,3 +5,9 @@ npm-debug.log*
 *.log
 /data/*.db
 /data/*.sqlite
+*.swp
+*.swo
+.env.local
+.env.*.local
+agrimarket-rw/api/
+agrimarket-rw/data/
