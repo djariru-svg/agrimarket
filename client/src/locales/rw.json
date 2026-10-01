@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "home": "Ahabanza",
+    "products": "Ibicuruzwa",
+    "about": "Kubyerekeye",
+    "dashboard": "Tableaudu",
+    "orders": "Order",
+    "profile": "Porofilo",
+    "login": "Kwinjira",
+    "register": "Kwiyandikisha",
+    "logout": "Kuva",
+    "cart": "Umushwano"
+  },
+  "home": {
+    "welcome": "Murakaza Neza ku AgriMarket RW",
+    "subtitle": "Isoko ryimfura ry'abahinzi n'abaguzi mu Rwanda",
+    "featured": "Ibicuruzwa Byinzira"
+  },
+  "products": {
+    "all": "Ibicuruzwa Byose",
+    "search": "Gushakisha",
+    "category": "Icyiciro",
+    "price": "Igiciro",
+    "stock": "Inganda"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Ijambo Ry'Ibanga",
+    "name": "Izina",
+    "phone": "Terefone",
+    "district": "Akarere",
+    "role": "Uruhare",
+    "farmer": "Umurimo",
+    "buyer": "Umuntu Acurura",
+    "admin": "Admin",
+    "login": "Kwinjira",
+    "register": "Kwiyandikisha",
+    "confirmPassword": "Emeza Ijambo Ry'Ibanga"
+  }
+}

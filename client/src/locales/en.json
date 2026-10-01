@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "dashboard": "Dashboard",
+    "orders": "Orders",
+    "profile": "Profile",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "cart": "Cart"
+  },
+  "home": {
+    "welcome": "Welcome to AgriMarket RW",
+    "subtitle": "Online marketplace connecting farmers and buyers in Rwanda",
+    "featured": "Featured Products"
+  },
+  "products": {
+    "all": "All Products",
+    "search": "Search",
+    "category": "Category",
+    "price": "Price",
+    "stock": "Stock"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "name": "Full Name",
+    "phone": "Phone",
+    "district": "District",
+    "role": "Role",
+    "farmer": "Farmer",
+    "buyer": "Buyer",
+    "admin": "Admin",
+    "login": "Login",
+    "register": "Register",
+    "confirmPassword": "Confirm Password"
+  }
+}
