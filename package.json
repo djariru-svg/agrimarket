@@ -1,0 +1,28 @@
+{
+  "name": "agrimarket-rw",
+  "version": "1.0.0",
+  "description": "AgriMarket RW - Full-stack web application connecting farmers and buyers in Rwanda",
+  "main": "server/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "seed": "cd server && node utils/seed.js",
+    "start": "cd server && node server.js"
+  },
+  "keywords": [
+    "agrimarket",
+    "rwanda",
+    "farming",
+    "ecommerce",
+    "farmers",
+    "buyers"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
